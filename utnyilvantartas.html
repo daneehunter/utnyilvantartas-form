@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <title>Útnyilvántartás</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+<script src="../utnyilvantartastable/js/utnyilvantartas.js"></script>
+</head>
+<body style="text-align:center; background: #eeeeee;">
+    <form action="" method="POST" class="text-center">
+        <div class="row">
+            <div class="col-sm-6">
+                <label>Név:</label>
+                <input type="text" name="nev" placeholder="Vezetéknév Keresztnév" class="form-control" required />
+            </div>
+            <div class="col-sm-6">
+                <label>Törzsszám:</label>
+                <input type="number" name="torzsszam" placeholder="Törzsszám" class="form-control" required />
+            </div>
+        </div>
+        <!-- row2 -->
+        <div class="row">
+            <div class="col-sm-4">
+                <label>Autó típusa:</label>
+                <input type="text" name="tipus" placeholder="Pl.: VOLKSWAGEN GOLF VI" class="form-control" />
+            </div>
+            <div class="col-sm-4">
+                <label>Autó rendszáma:</label>
+                <input type="text" name="rendszam" placeholder="Pl.: AAA-000" class="form-control" required />
+            </div>
+            <div class="col-sm-4">
+                <label>Autó fogyasztása:</label>
+                <input type="number" name="fogyasztas" placeholder="Pl.: 7,5" class="form-control" required />
+            </div>
+        </div>
+        <!-- row3 -->
+
+        <div class="row">
+            <div class="col-sm-2">
+                <label>Egyedüljössz munkába?</label>
+                <select onChange="displayDiv('tobbember',this);" class="form-select" name="munkabajaras" id="munkabajaras">
+                    <option value="1" selected>Igen</option>
+                    <option value="0">Nem</option>
+                </select>
+            </div>
+            <div class="col-sm-3" id="tobbember" style="display:none;">
+                <label>Hány embert hozol magaddal?</label>
+                <select onChange="" class="form-select" name="hanyan" id="hanyan">
+                <option value="0" style="display:none" selected>0</option>    
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                </select>
+            </div>
+            <div class="col-sm-2">
+                <br>
+                <a href="#" id="fill" onclick="mezoHozzaadas()"><button type="button"
+                        class="btn btn-success">Generálás</button></a>
+            </div>
+        </div>
+        <br>
+        <table >
+            <thead>
+                <tr>
+                <th id="inner0" ></th>
+                    <th id="inner1"></th>
+                    <th id="inner2"></th>
+                    <th id="inner2a"></th>
+                    <th id="inner2b"></th>
+                    <th id="inner2c"></th>
+                    <th id="inner2d"></th>
+                    <th id="inner3"></th>
+                    <th id="inner4"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th id="container0" ></th>
+                    <th id="container1"></th>
+                    <th id="container2"></th>
+                    <th id="container2a"></th>
+                    <th id="container2b"></th>
+                    <th id="container2c"></th>
+                    <th id="container2d"></th>
+                    <th id="container3"></th>
+                    <th id="container4"></th>
+                </tr>
+            </tbody>
+        </table>
+        </br>
+        <button type="submit" name="submit" id="submit" class="btn btn-danger">Küldés</button>
+    </form>
+</body>
+
+</html>
